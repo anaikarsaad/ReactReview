@@ -5,7 +5,7 @@ const Data = [{
     linkUrl: 'shop/hats'
   },
   {
-    title: 'beverages',
+    title: 'drinks',
     imageUrl: 'https://www.packagingdigest.com/sites/packagingdigest.com/files/AdobeStock_279692163_Editorial_Use_Only-Beverage-FTR-new.jpg',
     id: 2,
     linkUrl: 'shop/jackets'
