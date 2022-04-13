@@ -1,7 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import './reviewCard.scss'
-
+import Rating from '@material-ui/lab/Rating';
 const ReviewCard=(props)=>{
+    const [ratingValue, setRatingValue] = useState(0);
+    console.log(props.rating);
     return(
        
                <section id="testimonials">
@@ -25,16 +27,18 @@ const ReviewCard=(props)=>{
                       
                         <div class="name-user">
                             <strong>{props.name}</strong>
-                            {/* <span>@liammendes</span> */}
+                            <span>{props.date}</span>
                         </div>
                     </div>
                     
                     <div class="reviews">
-                        <i class="fas fa-star">{props.date}</i>
+                    <Rating name="read-only" value={props.rating}  precision={0.5} readOnly />
+      
+                        {/* <i class="fas fa-star">{props.date}</i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i> */}
                     </div>
                 </div>
                 

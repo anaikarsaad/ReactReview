@@ -124,6 +124,7 @@
 	
 	&__title {
 		margin-top: 0;
+		text-align: center;
 	}
 	
 	&__copy {
@@ -162,4 +163,7 @@
 
 .supaerror {
 	background-color: #E56460;
+}
+.rating{
+	padding: 10px;
 }

@@ -16,7 +16,7 @@ a{
 }
 .testimonial-heading{
    letter-spacing: 1px;
-   margin: 30px 0px;
+
    padding: 10px 20px;
    display: flex;
    flex-direction: column;
@@ -26,7 +26,7 @@ a{
 
 .testimonial-heading span{
    font-size: 1.3rem;
-   color: #252525;
+
    margin-bottom: 10px;
    letter-spacing: 2px;
    text-transform: uppercase;
@@ -43,6 +43,7 @@ a{
    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
    background-color: #ffffff;
    padding: 20px;
+   padding-top: 10px;
    margin: 15px;
    cursor: pointer;
 }
@@ -82,6 +83,11 @@ a{
 }
 .reviews{
    color: #3d3d3d;
+   display: flex;
+   flex-direction: column;
+}
+.date{
+   align-self: center;
 }
 .box-top{
    display: flex;
@@ -93,10 +99,10 @@ a{
    font-size: 0.9rem;
    color: #4b4b4b;
 }
-.testimonial-box:hover{
-   transform: translateY(-10px);
-   transition: all ease 0.3s;
-}
+// .testimonial-box:hover{
+//    transform: translateY(-10px);
+//    transition: all ease 0.3s;
+// }
 
 @media(max-width:1060px){
    .testimonial-box{

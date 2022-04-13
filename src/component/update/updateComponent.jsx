@@ -1,12 +1,14 @@
 import React,{useEffect,useState} from 'react';
 import { useLocation,useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './updateComponent.scss'
+import './updateComponent.scss';
+import Rating from '@material-ui/lab/Rating';
 const UpdateComponent=()=>{
     let navigate = useNavigate();
     const { state } = useLocation();
     const[items,setItems]=useState();
     const[click,setClick]=useState(false);
+    const [ratingValue, setRatingValue] = useState(0);
 //   const[expiry,setExpiry]=useState(state.expiry);
 //   const[price,setPrice]=useState(state.price);
 //   const[manufacture,setManufacture]=useState(state.manufacture);
@@ -24,16 +26,20 @@ const[review,setReview]=useState("");
     //   }, [click])
     
     
-    console.log(state);
+    // console.log(state);
+
+    
     const handleClick= async ()=>{
-        const { data } = await axios.post(' https://unitybackendshop.herokuapp.com/api/post/'+state.title,{
+        const { data } = await axios.post('https://unitybackendshop.herokuapp.com/api/post/'+state.title,{
            name:name,
-           review:review
+           review:review,
+           rating:ratingValue
         });
         console.log(state.title);
         navigate(`/home/${state.title}/review`)
         
     }
+    
     const postReview=(e)=>{
         e.preventDefault();
         handleClick();
@@ -45,11 +51,19 @@ const[review,setReview]=useState("");
         <div class="supaviews__gradient"></div>
         <div class="supaviews__add">
             <div class="supaview">
-                <h1 class="supaview__title">{state.title}</h1>
-                <form id="review" action="" onSubmit={postReview}>
+                <h1 class="supaview__title">{state.title.toUpperCase()}</h1>
+                <Rating className='rating'
+            name="Rating Label"
+            value={ratingValue}
+            onChange={(event, newValue) => {
+              setRatingValue(newValue);
+
+            }}
+          />
+                <form id="review" action="" autocomplete="off" onSubmit={postReview}>
                     
                     <div class="supaview__copy">
-                        <input type="text" name="name" placeholder="Name" onChange={e => setName(e.target.value)}/>
+                        <input type="text" name="name1" placeholder="Name" autocomplete="false" onChange={e => setName(e.target.value)}/>
                         <textarea name="message" placeholder="Message" rows="5" onChange={e => setReview(e.target.value)}></textarea>
                     </div>
                     <button class="supaview__submit" type='submit'>Submit review</button>

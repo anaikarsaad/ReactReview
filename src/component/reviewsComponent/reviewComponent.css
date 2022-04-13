@@ -7,22 +7,22 @@
  }
  .testimonial-heading{
     letter-spacing: 1px;
-    margin: 30px 0px;
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
  }
- 
+.title{
+   padding-bottom: 10px;
+}
  .testimonial-heading span{
     font-size: 2rem;
-    color: #252525;
     margin-bottom: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
  }
- 
+
  .testimonial-box-container{
     display: flex;
     justify-content: center;
